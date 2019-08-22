@@ -23,7 +23,7 @@ class FunnelGraph {
         this.width = options.width;
         this.subLabelValue = options.subLabelValue || 'percent';
         this.preValueLabel = options.preValueLabel || '';
-        this.postValueLabel = options.ppostValueLabel || '';
+        this.postValueLabel = options.postValueLabel || '';
     }
 
     /**
