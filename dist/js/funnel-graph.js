@@ -174,6 +174,8 @@ function () {
     this.height = options.height;
     this.width = options.width;
     this.subLabelValue = options.subLabelValue || 'percent';
+    this.preValueLabel = options.preValueLabel || '';
+    this.postValueLabel = options.ppostValueLabel || '';
   }
   /**
   An example of a two-dimensional funnel graph
@@ -322,7 +324,7 @@ function () {
         var value = document.createElement('div');
         value.setAttribute('class', 'label__value');
         var valueNumber = _this.is2d() ? _this.getValues2d()[index] : _this.values[index];
-        value.textContent = (0, _number.formatNumber)(valueNumber);
+        value.textContent = _this.preValueLabel + (0, _number.formatNumber)(valueNumber) + _this.postValueLabel;
         var percentageValue = document.createElement('div');
         percentageValue.setAttribute('class', 'label__percentage');
 

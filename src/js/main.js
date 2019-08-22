@@ -22,6 +22,8 @@ class FunnelGraph {
         this.height = options.height;
         this.width = options.width;
         this.subLabelValue = options.subLabelValue || 'percent';
+        this.preValueLabel = options.preValueLabel || '';
+        this.postValueLabel = options.ppostValueLabel || '';
     }
 
     /**
@@ -179,7 +181,7 @@ class FunnelGraph {
             value.setAttribute('class', 'label__value');
 
             const valueNumber = this.is2d() ? this.getValues2d()[index] : this.values[index];
-            value.textContent = formatNumber(valueNumber);
+            value.textContent = this.preValueLabel + formatNumber(valueNumber) + this.postValueLabel;
 
             const percentageValue = document.createElement('div');
             percentageValue.setAttribute('class', 'label__percentage');
